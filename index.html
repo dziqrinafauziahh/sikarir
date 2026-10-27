@@ -101,12 +101,12 @@ const P=[
 ['Psikolog','sos','Memahami perilaku dan membantu kesejahteraan psikis.','Observasi, empati, etika','S1 Psikologi + Profesi'],
 ['Insinyur Sipil','ten','Merancang dan mengawasi pembangunan gedung dan jalan.','Matematika, gambar teknik, tanggung jawab','S1 Teknik Sipil'],
 ['Teknisi Listrik / Mesin','ten','Memasang dan memperbaiki sistem listrik atau mesin.','Terampil tangan, keselamatan kerja','SMK Teknik, D3 Teknik']];
-const SHEET_URL= 'https://script.google.com/macros/s/AKfycbxAiuVHfuzsGssTKqH_VBMOBxQj38gciSa1n-h-GlKLBr_W90H8LtXS0rgZMCXdE-RE/exec';
+const SHEET_URL='https://script.google.com/macros/s/AKfycbypNVeTJf3PuaF8il6J0CldmUwsEkCfDIseRQGWaTtwdBnHC1v4F1X4aipxisJ_cSp_/exec';
 const $=s=>document.querySelector(s),ans=Array(30).fill(0);let me={},done=false,db=null,usr=null,rid=null;
 const pages=['p0','p1','p2','p3','p5','p6'],names=['Beranda','Kenali Diriku','Jelajah Karier','Peta Potensi','Rencana Karier','Tentang'];
 $('#nav').innerHTML=names.map((n,i)=>`<button onclick="show(${i})">${n}</button>`).join('');
 function show(i){document.querySelectorAll('.pg').forEach(e=>e.classList.remove('on'));$('#'+pages[i]).classList.add('on');[...$('#nav').children].forEach((b,j)=>b.classList.toggle('on',j==i));if(i==3)map();if(i==4)plan();scrollTo(0,0)}
-$('#go').onclick=()=>{if(!$('#nm').value.trim()||!$('#kl').value||!$('#ok').checked)return alert('Isi nama panggilan, pilih kelas, dan centang persetujuan.');me={nama:$('#nm').value.trim(),kelas:$('#kl').value};show(0)};
+$('#go').onclick=()=>{if(!$('#nm').value.trim()||!$('#kl').value||!$('#ok').checked)https://script.google.com/macros/s/AKfycbypNVeTJf3PuaF8il6J0CldmUwsEkCfDIseRQGWaTtwdBnHC1v4F1X4aipxisJ_cSp_/execreturn alert('Isi nama panggilan, pilih kelas, dan centang persetujuan.');me={nama:$('#nm').value.trim(),kelas:$('#kl').value};show(0)};
 $('#nav').style.display='none';const _s=show;show=function(i){$('#nav').style.display='flex';_s(i)};
 // kuesioner
 $('#qs').innerHTML=Q.map((q,i)=>`${i==0||Q[i-1][0]!=q[0]?`<h3 style="margin-top:16px">Bagian ${q[0]+1}: ${C[q[0]]}</h3>`:''}<div class="q"><div>${i+1}. ${q[1]}</div><div class="sc">${[1,2,3,4,5].map(v=>`<label><input type="radio" name="q${i}" value="${v}" onchange="ans[${i}]=${v};upd()">${v}</label>`).join('')}</div></div>`).join('');
