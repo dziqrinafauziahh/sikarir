@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SIKARIR – SMA Kartika XIX-4</title>
+<style>
+:root{--bg:#f3f8fe;--card:#fff;--tx:#12243f;--mut:#5a6b85;--nv:#0b2a5b;--bl:#dbeafe;--ac:#fde9a2;--br:#2563eb;--bd:#d6e2f2;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1424;--card:#13213a;--tx:#e8eef8;--mut:#9fb0cb;--nv:#9ec1ff;--bl:#1b2f52;--ac:#6b5a1f;--br:#6ea0ff;--bd:#27395c}}
+:root[data-theme="dark"]{--bg:#0b1424;--card:#13213a;--tx:#e8eef8;--mut:#9fb0cb;--nv:#9ec1ff;--bl:#1b2f52;--ac:#6b5a1f;--br:#6ea0ff;--bd:#27395c}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{background:var(--nv);color:#fff;padding:12px 16px}header b{font-size:20px;letter-spacing:.5px}header small{opacity:.8;display:block}
+:root[data-theme="dark"] header,@media(prefers-color-scheme:dark){}
+nav{display:flex;gap:6px;overflow-x:auto;padding:10px 12px;background:var(--card);border-bottom:1px solid var(--bd)}
+nav button{white-space:nowrap;border:0;background:none;color:var(--tx);padding:8px 14px;border-radius:99px;font:inherit;cursor:pointer}
+nav button.on{background:var(--ac);font-weight:700;color:#12243f}
+main{max-width:920px;margin:0 auto;padding:16px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:18px;margin-bottom:14px}
+h1{font-size:clamp(26px,6vw,38px);line-height:1.15;color:var(--nv);margin:.2em 0}h2{color:var(--nv);margin:.2em 0 .5em}h3{margin:.2em 0}
+.btn{background:var(--br);color:#fff;border:0;border-radius:12px;padding:11px 20px;font:inherit;font-weight:600;cursor:pointer}
+.btn.alt{background:var(--bl);color:var(--nv)}.btn:disabled{opacity:.45;cursor:not-allowed}
+.hero{display:grid;gap:18px;align-items:center}@media(min-width:700px){.hero{grid-template-columns:1.3fr 1fr}}
+.ill{background:linear-gradient(135deg,var(--bl),var(--ac));border-radius:24px;font-size:64px;text-align:center;padding:28px;line-height:1.3}
+input,select,textarea{width:100%;padding:10px;border:1px solid var(--bd);border-radius:10px;background:var(--bg);color:var(--tx);font:inherit}
+label{display:block;font-weight:600;margin:12px 0 4px}.mut{color:var(--mut);font-size:14px}
+.bar{height:10px;background:var(--bl);border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;background:var(--br);transition:width .3s}
+.q{padding:12px 0;border-bottom:1px solid var(--bd)}.sc{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
+.sc label{margin:0;font-weight:500;flex:1;min-width:46px;text-align:center;border:1px solid var(--bd);border-radius:10px;padding:8px 2px;cursor:pointer;font-size:14px}
+.sc input{display:none}.sc label:has(input:checked){background:var(--br);color:#fff;border-color:var(--br)}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.tag{display:inline-block;background:var(--ac);color:#12243f;border-radius:99px;padding:2px 10px;font-size:13px;margin:2px 4px 2px 0}
+.row{display:flex;align-items:center;gap:10px;margin:8px 0}.row span:first-child{width:110px;font-size:14px}.row .bar{flex:1;height:16px}.row b{width:42px;text-align:right}
+.note{background:var(--ac);color:#12243f;border-radius:12px;padding:10px 14px;font-size:14px}
+.pg{display:none}.pg.on{display:block}
+@media print{header,nav,.noprint{display:none!important}.pg{display:none!important}#p5{display:block!important}.card{border:0}}
+</style></head><body>
+<header><b>SIKARIR</b><small>Sistem Informasi Karier dan Eksplorasi Diri · SMA Kartika XIX-4</small></header>
+<nav id="nav"></nav>
+<main>
+<section class="pg on" id="gate">
+ <div class="card"><h2>Selamat datang 👋</h2>
+ <p>Isi data singkat di bawah. Kami hanya meminta <b>nama panggilan</b> dan <b>kelas</b>. Tidak ada nomor HP, alamat, atau data pribadi lain.</p>
+ <label>Nama panggilan</label><input id="nm" maxlength="30" placeholder="contoh: Dika">
+ <label>Kelas</label><select id="kl"><option value="">Pilih kelas…</option><option>X</option><option>XI</option><option>XII</option></select>
+ <label style="font-weight:500;display:flex;gap:8px;margin-top:14px"><input type="checkbox" id="ok" style="width:auto"><span>Saya bersedia ikut. Jawaban saya dipakai untuk bimbingan dan penelitian, hanya dilihat guru BK/peneliti, dan saya boleh berhenti kapan saja. Jika usia saya di bawah 18 tahun, orang tua/sekolah sudah mengetahuinya.</span></label>
+ <p><button class="btn" id="go">Mulai</button></p></div>
+</section>
+
+<section class="pg" id="p0">
+ <div class="card hero"><div><h1>Kenali Potensimu, Rancang Masa Depanmu</h1>
+ <p>SIKARIR membantu kamu mengenali minat, kemampuan, dan nilai pribadi, menjelajahi profesi, lalu menyusun rencana karier sederhana. Hasilnya untuk <b>refleksi awal</b>, bukan tes psikologi dan bukan penentu masa depan.</p>
+ <button class="btn" onclick="show(1)">Mulai Eksplorasi →</button></div><div class="ill">🧑‍🎓📈<br>🚀🎯</div></div>
+ <div class="grid"><div class="card"><h3>1. Kenali Diriku</h3><p class="mut">30 pernyataan skala 1–5.</p></div><div class="card"><h3>2. Jelajah Karier</h3><p class="mut">Cari dan filter profesi.</p></div><div class="card"><h3>3. Peta Potensi</h3><p class="mut">Grafik hasil jawabanmu.</p></div><div class="card"><h3>4. Rencana Karier</h3><p class="mut">Susun langkah dan cetak.</p></div></div>
+</section>
+
+<section class="pg" id="p1">
+ <div class="card"><h2>Kenali Diriku</h2><div class="bar"><i id="pb" style="width:0"></i></div><p class="mut" id="pt">0 dari 30 terjawab</p>
+ <p class="mut">1 = Sangat tidak sesuai · 2 = Kurang sesuai · 3 = Netral · 4 = Sesuai · 5 = Sangat sesuai</p><div id="qs"></div>
+ <p id="qa"></p></div>
+ <div id="res"></div>
+</section>
+
+<section class="pg" id="p2">
+ <div class="card"><h2>Jelajah Karier</h2><input id="sr" placeholder="Cari profesi atau keterampilan…"><p><select id="ff"></select></p></div>
+ <div class="grid" id="pf"></div>
+</section>
+
+<section class="pg" id="p3"><div id="map"></div></section>
+
+<section class="pg" id="p5"><div class="card"><h2>Rencana Karierku</h2>
+ <div id="pl"></div>
+ <div class="noprint"><p><button class="btn" id="sv">Simpan &amp; Kirim Rencana</button> <button class="btn alt" onclick="print()">🖨 Cetak</button> <button class="btn alt" id="dw">⬇ Unduh Rencana (Word)</button> <button class="btn alt" id="dl">⬇ Unduh jawabanku (CSV)</button></p><p class="mut" id="sm"></p></div></div></section>
+
+<section class="pg" id="p6">
+ <div class="card"><h2>Tentang SIKARIR</h2>
+ <p>SIKARIR adalah <b>media pendukung layanan BK</b> untuk membantu siswa refleksi karier. Media ini <b>tidak menggantikan guru BK</b>. Diskusikan hasilnya dengan guru BK, orang tua, dan orang yang kamu percaya.</p>
+ <p><b>Cara hitung (transparan):</b> setiap bidang punya 3 pernyataan (minat, kemampuan, aktivitas favorit). Skor bidang = rata-rata ketiganya ÷ 5 × 100%. Bidang “perlu dikembangkan” = minat lebih tinggi daripada kemampuan. Nilai pribadi = 3 skor tertinggi dari 9 pernyataan nilai. Tidak ada kecerdasan buatan atau deep learning dalam perhitungan ini.</p>
+ <p class="note">Hasil hanya untuk refleksi awal. Bukan tes psikologi profesional, bukan penentu karier, dan tidak menyatakan satu profesi pasti cocok untukmu. Data pada halaman ini hanya disimpan jika kamu menekan tombol kirim; tanpa itu, data hilang saat halaman ditutup.</p></div>
+ <div class="card noprint" id="adm" style="display:none"><h2>Data Responden (khusus guru/peneliti)</h2><p id="ac" class="mut">Memuat…</p><button class="btn" id="ad">⬇ Unduh semua data (CSV, bisa dibuka di Excel)</button></div>
+</section>
+</main>
+<script>
+const F={tek:['Teknologi','💻'],kes:['Kesehatan','🩺'],pen:['Pendidikan','📚'],bis:['Bisnis','💼'],sen:['Seni','🎨'],sos:['Sosial','🤝'],ten:['Teknik','⚙️']},K=Object.keys(F);
+const C=['Minat','Kemampuan','Aktivitas favorit','Nilai pribadi'];
+const Q=[
+[0,'Saya tertarik memahami cara kerja aplikasi, game, dan komputer.','tek'],[0,'Saya tertarik pada kesehatan tubuh dan cara merawat orang sakit.','kes'],[0,'Saya tertarik mengajar atau menjelaskan sesuatu kepada orang lain.','pen'],[0,'Saya tertarik pada jual beli, usaha, dan pengelolaan uang.','bis'],[0,'Saya tertarik pada seni, desain, musik, atau menulis kreatif.','sen'],[0,'Saya tertarik membantu orang yang kesulitan dan isu di masyarakat.','sos'],[0,'Saya tertarik pada mesin, bangunan, listrik, atau cara membuat benda.','ten'],
+[1,'Saya mampu berpikir logis untuk memecahkan masalah atau membuat program.','tek'],[1,'Saya mampu tenang, teliti, dan peduli saat orang lain sakit atau panik.','kes'],[1,'Saya mampu menjelaskan materi dengan jelas agar mudah dipahami.','pen'],[1,'Saya mampu menawarkan ide, bernegosiasi, atau menghitung untung-rugi.','bis'],[1,'Saya mampu menghasilkan karya kreatif (gambar, musik, tulisan, video).','sen'],[1,'Saya mampu mendengarkan dan memahami perasaan orang lain.','sos'],[1,'Saya mampu merakit, memperbaiki, atau menggambar rancangan benda.','ten'],
+[2,'Saya senang mengutak-atik gawai, aplikasi, atau membuat sesuatu di komputer.','tek'],[2,'Saya senang mempelajari tubuh manusia, olahraga, atau pertolongan pertama.','kes'],[2,'Saya senang membantu teman belajar atau memimpin kegiatan belajar.','pen'],[2,'Saya senang berjualan, mengatur acara, atau mengelola uang kelompok.','bis'],[2,'Saya senang menggambar, bermusik, memotret, atau membuat konten.','sen'],[2,'Saya senang ikut kegiatan sosial, relawan, atau organisasi.','sos'],[2,'Saya senang membongkar barang, membuat prakarya, atau bereksperimen.','ten'],
+[3,'Bagi saya, membantu dan bermanfaat bagi orang lain itu penting.','Membantu sesama'],[3,'Bagi saya, bebas berkreasi dan berekspresi itu penting.','Kreativitas'],[3,'Bagi saya, penghasilan yang besar itu penting.','Penghasilan'],[3,'Bagi saya, pekerjaan yang stabil dan aman itu penting.','Stabilitas'],[3,'Bagi saya, bekerja mandiri dan mengatur diri sendiri itu penting.','Kemandirian'],[3,'Bagi saya, tantangan baru dan hal sulit itu menarik.','Tantangan'],[3,'Bagi saya, waktu seimbang untuk keluarga dan diri sendiri itu penting.','Keseimbangan hidup'],[3,'Bagi saya, terus belajar hal baru itu penting.','Belajar terus'],[3,'Bagi saya, berprestasi dan diakui itu penting.','Prestasi']];
+const P=[
+['Programmer / Pengembang Aplikasi','tek','Membuat dan merawat aplikasi, situs web, atau game.','Logika, pemrograman, kerja tim','S1 Informatika, Sistem Informasi, SMK RPL'],
+['Analis Data','tek','Mengolah data menjadi informasi untuk keputusan.','Statistika, Excel/Python, ketelitian','S1 Statistika, Matematika, Informatika'],
+['Perawat','kes','Merawat pasien dan membantu pemulihan di fasilitas kesehatan.','Empati, ketelitian, komunikasi','D3/Ners Keperawatan'],
+['Apoteker','kes','Meracik dan memberi informasi obat dengan aman.','Teliti, kimia dasar, komunikasi','S1 Farmasi + Profesi Apoteker'],
+['Ahli Gizi','kes','Menyusun pola makan sehat untuk individu atau kelompok.','Biologi, edukasi, analisis','S1 Gizi'],
+['Guru','pen','Merancang pembelajaran dan membimbing peserta didik.','Komunikasi, sabar, kreatif','S1 Pendidikan (sesuai bidang)'],
+['Konselor / Guru BK','pen','Mendampingi siswa dalam masalah pribadi, belajar, dan karier.','Mendengar aktif, empati, etika','S1 Bimbingan dan Konseling'],
+['Wirausahawan','bis','Membangun dan mengelola usaha sendiri.','Inisiatif, keuangan, pemasaran','Manajemen, Bisnis, atau pelatihan usaha'],
+['Akuntan','bis','Mencatat dan melaporkan keuangan organisasi.','Teliti, hitung, jujur','S1 Akuntansi'],
+['Desainer Grafis','sen','Membuat visual untuk merek, media, dan produk.','Kreativitas, software desain, komunikasi','S1 DKV, Desain, SMK Multimedia'],
+['Musisi / Produser Musik','sen','Mencipta, menampilkan, atau memproduksi musik.','Telinga musik, disiplin, kolaborasi','Seni Musik, kursus, otodidak'],
+['Pekerja Sosial','sos','Mendampingi individu dan komunitas yang membutuhkan.','Empati, komunikasi, advokasi','S1 Kesejahteraan Sosial'],
+['Psikolog','sos','Memahami perilaku dan membantu kesejahteraan psikis.','Observasi, empati, etika','S1 Psikologi + Profesi'],
+['Insinyur Sipil','ten','Merancang dan mengawasi pembangunan gedung dan jalan.','Matematika, gambar teknik, tanggung jawab','S1 Teknik Sipil'],
+['Teknisi Listrik / Mesin','ten','Memasang dan memperbaiki sistem listrik atau mesin.','Terampil tangan, keselamatan kerja','SMK Teknik, D3 Teknik']];
+const SHEET_URL='PASTE_URL_APPS_SCRIPT_DI_SINI';
+const $=s=>document.querySelector(s),ans=Array(30).fill(0);let me={},done=false,db=null,usr=null,rid=null;
+const pages=['p0','p1','p2','p3','p5','p6'],names=['Beranda','Kenali Diriku','Jelajah Karier','Peta Potensi','Rencana Karier','Tentang'];
+$('#nav').innerHTML=names.map((n,i)=>`<button onclick="show(${i})">${n}</button>`).join('');
+function show(i){document.querySelectorAll('.pg').forEach(e=>e.classList.remove('on'));$('#'+pages[i]).classList.add('on');[...$('#nav').children].forEach((b,j)=>b.classList.toggle('on',j==i));if(i==3)map();if(i==4)plan();scrollTo(0,0)}
+$('#go').onclick=()=>{if(!$('#nm').value.trim()||!$('#kl').value||!$('#ok').checked)return alert('Isi nama panggilan, pilih kelas, dan centang persetujuan.');me={nama:$('#nm').value.trim(),kelas:$('#kl').value};show(0)};
+$('#nav').style.display='none';const _s=show;show=function(i){$('#nav').style.display='flex';_s(i)};
+// kuesioner
+$('#qs').innerHTML=Q.map((q,i)=>`${i==0||Q[i-1][0]!=q[0]?`<h3 style="margin-top:16px">Bagian ${q[0]+1}: ${C[q[0]]}</h3>`:''}<div class="q"><div>${i+1}. ${q[1]}</div><div class="sc">${[1,2,3,4,5].map(v=>`<label><input type="radio" name="q${i}" value="${v}" onchange="ans[${i}]=${v};upd()">${v}</label>`).join('')}</div></div>`).join('');
+function upd(){const n=ans.filter(Boolean).length;$('#pb').style.width=n/30*100+'%';$('#pt').textContent=n+' dari 30 terjawab';$('#qa').innerHTML=`<button class="btn" ${n<30?'disabled':''} onclick="finish()">Lihat Hasil</button>`}upd();
+function calc(){const s={},g={};K.forEach(k=>{const a=Q.map((q,i)=>q[2]==k?ans[i]:null).filter(x=>x);s[k]=Math.round(a.reduce((x,y)=>x+y,0)/3/5*100);const m=ans[Q.findIndex(q=>q[0]==0&&q[2]==k)],c=ans[Q.findIndex(q=>q[0]==1&&q[2]==k)];g[k]=m-c});
+const top=[...K].sort((a,b)=>s[b]-s[a]),dev=K.filter(k=>g[k]>0).sort((a,b)=>g[b]-g[a]).slice(0,2),val=Q.map((q,i)=>[q[2],ans[i]]).filter((_,i)=>i>=21).sort((a,b)=>b[1]-a[1]).slice(0,3).map(x=>x[0]);return{s,top,dev,val}}
+function finish(){done=true;const r=calc();$('#res').innerHTML=`<div class="card"><h2>Hasil Refleksimu</h2><p>Bidang dengan skor tertinggi: <b>${r.top.slice(0,3).map(k=>F[k][1]+' '+F[k][0]+' ('+r.s[k]+'%)').join(', ')}</b>.</p><p>Nilai pribadi utama: ${r.val.map(v=>`<span class="tag">${v}</span>`).join('')}</p><p class="note">Ini gambaran awal dari jawabanmu hari ini, bukan penentu karier.</p><button class="btn" onclick="show(3)">Lihat Peta Potensi</button> <button class="btn alt" onclick="redo()">Ulangi Asesmen</button></div>`;save();scrollTo(0,document.body.scrollHeight)}
+function redo(){ans.fill(0);document.querySelectorAll('.sc input').forEach(e=>e.checked=false);done=false;$('#res').innerHTML='';upd();scrollTo(0,0)}
+// profesi
+$('#ff').innerHTML='<option value="">Semua bidang</option>'+K.map(k=>`<option value="${k}">${F[k][1]} ${F[k][0]}</option>`).join('');
+const card=p=>`<div class="card"><h3>${p[0]}</h3><span class="tag">${F[p[1]][1]} ${F[p[1]][0]}</span><p>${p[2]}</p><p class="mut"><b>Keterampilan:</b> ${p[3]}<br><b>Pendidikan relevan:</b> ${p[4]}</p></div>`;
+function lp(){const t=$('#sr').value.toLowerCase(),f=$('#ff').value,r=P.filter(p=>(!f||p[1]==f)&&(p.join(' ').toLowerCase().includes(t)));$('#pf').innerHTML=r.map(card).join('')||'<p class="mut">Tidak ditemukan.</p>'}$('#sr').oninput=$('#ff').onchange=lp;lp();
+function map(){if(!done){$('#map').innerHTML='<div class="card"><p>Selesaikan dulu asesmen “Kenali Diriku” (30 soal) agar peta potensimu muncul.</p><button class="btn" onclick="show(1)">Ke Kenali Diriku</button></div>';return}
+const r=calc(),alt=P.filter(p=>r.top.slice(0,2).includes(p[1]));
+$('#map').innerHTML=`<div class="card"><h2>Grafik Minat &amp; Potensi per Bidang</h2>${K.map(k=>`<div class="row"><span>${F[k][1]} ${F[k][0]}</span><div class="bar"><i style="width:${r.s[k]}%"></i></div><b>${r.s[k]}%</b></div>`).join('')}</div>
+<div class="card"><h3>Ringkasan kemampuan</h3><p>Kemampuan terkuat menurut jawabanmu: <b>${[...K].sort((a,b)=>ans[7+K.indexOf(b)]-ans[7+K.indexOf(a)]).slice(0,2).map(k=>F[k][0]).join(' dan ')}</b>.</p>
+<h3>Bidang yang ingin dikembangkan</h3><p>${r.dev.length?r.dev.map(k=>F[k][1]+' '+F[k][0]).join(', ')+' — minatmu lebih tinggi daripada kemampuan saat ini, jadi layak dilatih.':'Minat dan kemampuanmu relatif seimbang.'}</p></div>
+<h3>Alternatif profesi untuk dijelajahi</h3><div class="grid">${alt.map(card).join('')}</div><p class="note">Ini hanya ide untuk dijelajahi, bukan keputusan. Diskusikan dengan guru BK.</p>`}
+// rencana
+const FL=[['tujuan','Tujuan karierku'],['alasan','Alasan memilih tujuan itu'],['potensi','Potensi/dukungan yang kumiliki'],['tingkat','Keterampilan yang perlu ditingkatkan'],['langkah','Langkah tindakan yang akan kulakukan'],['bantuan','Bantuan yang kubutuhkan (guru BK, orang tua, dll.)']];
+const pv={};function plan(){$('#pl').innerHTML=`<p><b>${me.nama||''}</b> · Kelas ${me.kelas||''}</p>`+FL.map(f=>`<label>${f[1]}</label><textarea rows="2" data-k="${f[0]}">${pv[f[0]]||''}</textarea>`).join('')+`<label>Target waktu</label><input data-k="target" value="${pv.target||''}" placeholder="contoh: Desember 2026"><label>Perasaanmu setelah memakai SIKARIR</label><select data-k="rasa"><option></option><option>Lebih jelas arahnya</option><option>Lebih tenang</option><option>Masih bingung tapi terbantu</option><option>Biasa saja</option></select>`;
+document.querySelectorAll('#pl [data-k]').forEach(e=>{if(pv[e.dataset.k])e.value=pv[e.dataset.k];e.oninput=e.onchange=()=>pv[e.dataset.k]=e.value})}
+// data
+function rec(){rid=rid||'r'+Date.now().toString(36)+Math.random().toString(36).slice(2,6);const r=done?calc():null,o={id:rid,nama:me.nama,kelas:me.kelas,waktu:new Date().toISOString()};ans.forEach((a,i)=>o['q'+(i+1)]=a);K.forEach(k=>o['skor_'+F[k][0]]=r?r.s[k]:'');o.nilai_utama=r?r.val.join('; '):'';Object.assign(o,{tujuan:'',alasan:'',potensi:'',tingkat:'',langkah:'',bantuan:'',target:'',rasa:''},pv);return o}
+async function save(){const o=rec();let ok=false;try{if(SHEET_URL.startsWith('http')){await fetch(SHEET_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(o)});ok=true}if(db){await db.collection('responses').doc(rid).set(o);ok=true}}catch(e){}$('#sm').textContent=ok?'✅ Jawabanmu terkirim ke guru BK.':'Belum bisa terkirim otomatis. Tekan Unduh lalu serahkan file ke guru BK.'}
+$('#sv').onclick=async()=>{if(!done)return alert('Selesaikan asesmen dulu.');$('#sm').textContent='Mengirim…';await save()};
+const csv=rows=>{const h=[...new Set(rows.flatMap(Object.keys))];return '\ufeff'+[h,...rows.map(r=>h.map(k=>'"'+String(r[k]??'').replace(/"/g,'""')+'"'))].map(a=>a.join(',')).join('\n')};
+async function dlf(name,rows){const t=csv(rows);try{const d=await claude.use('downloads');if(d)return await d.save({filename:name,data:new Blob([t],{type:'text/csv'})})}catch(e){}const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([t],{type:'text/csv'}));a.download=name;a.click()}
+$('#dl').onclick=()=>dlf('sikarir_'+(me.nama||'siswa')+'.csv',[rec()]);
+async function dlt(name,t,ty){try{const d=await claude.use('downloads');if(d)return await d.save({filename:name,data:new Blob([t],{type:ty})})}catch(e){}const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([t],{type:ty}));a.download=name;a.click()}
+function planDoc(){const o=rec(),e=s=>String(s||'-').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\n/g,'<br>');return '<html><head><meta charset="utf-8"><title>Rencana Karier</title></head><body style="font-family:Calibri,Arial"><h1>Rencana Karier – SIKARIR</h1><p>Nama: '+e(o.nama)+' · Kelas '+e(o.kelas)+' · '+o.waktu.slice(0,10)+'</p>'+FL.map(f=>'<h3>'+f[1]+'</h3><p>'+e(o[f[0]])+'</p>').join('')+'<h3>Target waktu</h3><p>'+e(o.target)+'</p><p><i>Hasil SIKARIR hanya untuk refleksi awal, bukan tes psikologi atau penentu karier.</i></p></body></html>'}
+$('#dw').onclick=()=>dlt('Rencana_Karier_'+(me.nama||'siswa')+'.doc',planDoc(),'application/msword');
+(async()=>{try{db=await claude.use('db');usr=await claude.use('user');if(usr&&usr.canEdit()&&db){$('#adm').style.display='block';const s=await db.collection('responses').get();const rows=s.docs.map(d=>d.data());$('#ac').textContent=rows.length+' responden tercatat.';$('#ad').onclick=()=>dlf('data_responden_sikarir.csv',rows)}}catch(e){}})();
+</script></body></html>
