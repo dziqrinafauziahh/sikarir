@@ -101,7 +101,7 @@ const P=[
 ['Psikolog','sos','Memahami perilaku dan membantu kesejahteraan psikis.','Observasi, empati, etika','S1 Psikologi + Profesi'],
 ['Insinyur Sipil','ten','Merancang dan mengawasi pembangunan gedung dan jalan.','Matematika, gambar teknik, tanggung jawab','S1 Teknik Sipil'],
 ['Teknisi Listrik / Mesin','ten','Memasang dan memperbaiki sistem listrik atau mesin.','Terampil tangan, keselamatan kerja','SMK Teknik, D3 Teknik']];
-const SHEET_URL='PASTE_URL_APPS_SCRIPT_DI_SINI';
+const SHEET_URL= 'https://script.google.com/macros/s/AKfycbxAiuVHfuzsGssTKqH_VBMOBxQj38gciSa1n-h-GlKLBr_W90H8LtXS0rgZMCXdE-RE/exec';
 const $=s=>document.querySelector(s),ans=Array(30).fill(0);let me={},done=false,db=null,usr=null,rid=null;
 const pages=['p0','p1','p2','p3','p5','p6'],names=['Beranda','Kenali Diriku','Jelajah Karier','Peta Potensi','Rencana Karier','Tentang'];
 $('#nav').innerHTML=names.map((n,i)=>`<button onclick="show(${i})">${n}</button>`).join('');
